@@ -13,8 +13,8 @@ public class Main {
 			System.out.println("El DNI ingresado fue: " + dni);
 		} catch (DniInvalido e) {
 			e.printStackTrace();
-		} 
-
+		}  catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 }

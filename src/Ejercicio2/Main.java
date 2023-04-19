@@ -15,7 +15,8 @@ public class Main {
 			System.out.println("No existe archivo");
 		}
 		
-		System.out.println("\n A CONTINUACIÓN LEE DE A LINEAS: ");
+		System.out.println("\n A CONTINUACIï¿½N LEE DE A LINEAS: ");
 		archivo.lee_lineas();
-	}
+		
+	}	
 }

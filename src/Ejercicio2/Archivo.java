@@ -1,7 +1,9 @@
 package Ejercicio2;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Archivo {
@@ -40,6 +42,26 @@ public class Archivo {
 
 		} catch (IOException e) {
 			System.out.println("No se encontro el archivo");
+		}
+	}
+	
+	public void escribe_lineas(String frase) {
+		try 
+		{	
+			FileWriter entrada = new FileWriter(ruta, true);
+			BufferedWriter miBuffer = new BufferedWriter(entrada);
+			
+			miBuffer.write(frase);
+			
+			miBuffer.close();
+			entrada.close();
+
+		} catch (IOException e) {
+			e.getMessage();
+			e.printStackTrace();
+		} catch(Exception e) {
+			e.getMessage();
+			e.printStackTrace();
 		}
 	}
 
