@@ -13,6 +13,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import ejercicio1.Helper;
+
 public class Archivo {
 
 	private String ruta;
@@ -39,12 +41,19 @@ public class Archivo {
 			String linea;
 			Set<Persona> personasSet = new HashSet<>();
 			while ((linea = miBuffer.readLine()) != null) {
+				
 				String cadena[] = linea.split("-");
 				String nombre = cadena[0].trim();
 				String apellido = cadena[1].trim();
 				String dni = cadena[2].trim();
+				
+				if(!(Helper.verificarDni(dni))) {
+					continue;					
+				}
 				Persona persona = new Persona(nombre, apellido, Integer.parseInt(dni));
+				System.out.println(persona.toString());
 				personasSet.add(persona);
+				
 			}
 			miBuffer.close();
 			List<Persona> personaList = new ArrayList<>(personasSet);

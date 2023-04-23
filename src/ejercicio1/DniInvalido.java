@@ -2,7 +2,7 @@ package ejercicio1;
 
 import java.io.IOException;
 //
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 //
 public class DniInvalido extends IOException{
 
