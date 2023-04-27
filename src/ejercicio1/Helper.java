@@ -21,7 +21,7 @@ public class Helper {
 		
 		if(!result) 
 		{
-			System.out.println("DNI invalido, Persona no agregada a la lista.");
+			//System.out.println("DNI invalido, Persona no agregada a la lista.");
 		}
 			
 		return result;

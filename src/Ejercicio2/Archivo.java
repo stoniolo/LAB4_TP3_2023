@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import ejercicio1.Helper;
 
@@ -34,12 +35,12 @@ public class Archivo {
 		return false;
 	}
 
-	public void lee_lineas() {
+	public Set<Persona> lee_lineas() {
+		
+		Set<Persona> personasSet = new TreeSet<>();
 		try {
 			BufferedReader miBuffer = new BufferedReader(new FileReader(ruta));
-
 			String linea;
-			Set<Persona> personasSet = new HashSet<>();
 			while ((linea = miBuffer.readLine()) != null) {
 				
 				String cadena[] = linea.split("-");
@@ -61,6 +62,7 @@ public class Archivo {
 		} catch (IOException e) {
 			System.out.println("No se encontro el archivo");
 		}
+		return personasSet;
 	}
 
 	public void escribe_lineas(String frase) {
@@ -68,7 +70,7 @@ public class Archivo {
 			FileWriter entrada = new FileWriter(ruta, true);
 			BufferedWriter miBuffer = new BufferedWriter(entrada);
 
-			miBuffer.write(frase);
+			miBuffer.write(frase+'\n');
 
 			miBuffer.close();
 			entrada.close();
